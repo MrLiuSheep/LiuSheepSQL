@@ -1,8 +1,10 @@
 # <a name="title">Taichi Voxel Challenge</a>
 
 <p align="center">
+ <p>Project_1</p>
 <img src="project_1.jpg" width="75%"></img>
 <img src="project_1(2).jpg" width="75%"></img>
+<p>Project_2</p>
 <img src="project_2.jpg" width="75%"></img>
 <img src="project_2(2).jpg" width="75%"></img>
 </p>
