@@ -7,6 +7,9 @@
 <p>Project_2</p>
 <img src="project_2.jpg" width="75%"></img>
 <img src="project_2(2).jpg" width="75%"></img>
+<p>Project_3</p>
+<img src="project_3.jpg" width="75%"></img>
+<img src="project_3(2).jpg" width="75%"></img>
 </p>
 
 > Figure: result of `python3 example6.py`. Please replace the image above (`demo.jpg`) with yours, so that other people can immediately see your results :-)
