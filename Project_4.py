@@ -1,8 +1,10 @@
 from scene import Scene
 import taichi as ti
 from taichi.math import *
-scene = Scene(voxel_edges=0, exposure=3);scene.set_floor(-1, (0.5, 0.5, 1))
-scene.set_background_color((0.5, 0.5, 1));scene.set_directional_light((1, 1, 0), 0.1, (0.3, 0.3, 0.3))
+scene = Scene(voxel_edges=0, exposure=3)
+scene.set_floor(-1, (0.5, 0.5, 1))
+scene.set_background_color((0.5, 0.5, 1))
+scene.set_directional_light((1, 1, 0), 0.1, (0.3, 0.3, 0.3))
 @ti.func
 def cloud(x,y,z):
     for i in range(0,21):
