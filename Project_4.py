@@ -9,9 +9,9 @@ scene.set_directional_light((1, 1, 0), 0.1, (0.3, 0.3, 0.3))
 def cloud(x,y,z):
     for i in range(0,21):
         for j,k in ti.ndrange((-25+i,26-i),(-1,2)):
-            scene.set_voxel(vec3(0.5*i*ti.cos(15.0+i*360*10)+x,0.5*i*ti.sin(15.0+i*360*10)*0.5+y,j*0.1+k+z), 1, vec3(1,1,1))
-            scene.set_voxel(vec3(0.5*i*ti.cos(15.0+i*360*10)+x,0.5*i*ti.sin(15.0+i*360*10)*0.5+k+y,j*0.1+z), 1, vec3(1,1,1))
-            scene.set_voxel(vec3(0.5*i*ti.cos(15.0+i*360*10)+k+x,0.5*i*ti.sin(15.0+i*360*10)*0.5+y,j*0.1+z), 1, vec3(1,1,1))
+            scene.set_voxel(vec3(0.5*i*ti.cos(15.0+i*3600)+x,0.25*i*ti.sin(15.0+i*3600)+y,j*0.1+k+z),1,vec3(1,1,1))
+            scene.set_voxel(vec3(0.5*i*ti.cos(15.0+i*3600)+x,0.25*i*ti.sin(15.0+i*3600)+k+y,j*0.1+z),1,vec3(1,1,1))
+            scene.set_voxel(vec3(0.5*i*ti.cos(15.0+i*3600)+k+x,0.25*i*ti.sin(15.0+i*3600)+y,j*0.1+z),1,vec3(1,1,1))
 @ti.kernel
 def initialize_voxels():
     for i,j in ti.ndrange((0,11),(-3,4)):
