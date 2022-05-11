@@ -11,13 +11,13 @@ def hear(x,y,z,length):
     for h in range(0,length+1):
             scene.set_voxel(vec3(x,h+y,h*0.3+z), 1, vec3(1, 0, 0)*(ti.random()+0.3))
             for i in range(-2,3):
-                scene.set_voxel(vec3(x+i,h-1+y,h*0.3+z), 1, vec3(1, 0, 0)*(ti.random()+0.3))
-                scene.set_voxel(vec3(x-i,h-1+y,h*0.3+z), 1, vec3(1, 0, 0)*(ti.random()+0.3))
-                scene.set_voxel(vec3(x,h-1+y,h*0.3+i+z), 1, vec3(1, 0, 0)*(ti.random()+0.3))
-                scene.set_voxel(vec3(x,h-1+y,h*0.3-i+z), 1, vec3(1, 0, 0)*(ti.random()+0.3))
+                scene.set_voxel(vec3(x+i,h-1+y,h*0.3+z), 1, vec3(1, 0, 0)*(ti.random()+0.4))
+                scene.set_voxel(vec3(x-i,h-1+y,h*0.3+z), 1, vec3(1, 0, 0)*(ti.random()+0.4))
+                scene.set_voxel(vec3(x,h-1+y,h*0.3+i+z), 1, vec3(1, 0, 0)*(ti.random()+0.4))
+                scene.set_voxel(vec3(x,h-1+y,h*0.3-i+z), 1, vec3(1, 0, 0)*(ti.random()+0.4))
             for j in range(-1,2):
-                scene.set_voxel(vec3(x+j,h-1+y,h*0.3+j+z), 1, vec3(1, 0, 0)*(ti.random()+0.3))
-                scene.set_voxel(vec3(x+j,h-1+y,h*0.3-j+z), 1, vec3(1, 0, 0)*(ti.random()+0.3))
+                scene.set_voxel(vec3(x+j,h-1+y,h*0.3+j+z), 1, vec3(1, 0, 0)*(ti.random()+0.4))
+                scene.set_voxel(vec3(x+j,h-1+y,h*0.3-j+z), 1, vec3(1, 0, 0)*(ti.random()+0.4))
 @ti.func
 def ball(x,y,z,r):
     for i,j,k in ti.ndrange((-64,63),(-64,63),(-64,63)):
@@ -28,9 +28,9 @@ def initialize_voxels():
     # Your code here! :-)
     for i,j,k in ti.ndrange((-64,63),(-64,63),(-64,63)):
         if (i**2 + k**2)/625 + j**2/(0.2*j + 24)**2 <= 1:
-            scene.set_voxel(vec3(i, j, k), 1, vec3(1, 0, 0)*(ti.random()+0.3))
+            scene.set_voxel(vec3(i, j, k), 1, vec3(1, 0, 0)*(ti.random()+0.4))
             if j <= -5:
-                scene.set_voxel(vec3(i, j, k), 1, vec3(0.5, 1, 0.1))
+                scene.set_voxel(vec3(i, j, k), 1, vec3(1, 1, 0.2))
     for i,j,k in ti.ndrange((-64,63),(-64,63),(-64,64)):
         if ((i-21)**2 + (j-5)**2 + (k-7)**2)**0.5 <= 7:
             scene.set_voxel(vec3(i, j, k), 1, vec3(1, 1, 1))
@@ -46,8 +46,8 @@ def initialize_voxels():
         scene.set_voxel(vec3(23, h+w+10, -(h-1)*2-1), 1, vec3(0, 0, 0))
     for i,j in ti.ndrange((-5,6),(0,10)):
         for k in range(-5+i+2*j,6-i-2*j):
-            scene.set_voxel(vec3(i+28,j-4,k), 1, vec3(0, 1, 0))
-            scene.set_voxel(vec3(i+28,-j-4,k), 1, vec3(0, 1, 0))
+            scene.set_voxel(vec3(i+28,j-4,k), 1, vec3(1, 0.8, 0))
+            scene.set_voxel(vec3(i+28,-j-4,k), 1, vec3(1, 0.8, 0))
     hear(0,28,-4,10)
     hear(0,28,2,7)
     for i in range(-11,12):
